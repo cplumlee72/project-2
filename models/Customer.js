@@ -35,9 +35,9 @@ Customer.init(
     },
   },
   {
-    hooks: {
-        // Do we need a hook for customer? //
-    },
+    // hooks: {
+    //     // Do we need a hook for customer? //
+    // },
     sequelize,
     timestamps: false,
     freezeTableName: true,
