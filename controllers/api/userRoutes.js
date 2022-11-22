@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const { User, Customer } = require('../models');
-
+const withAuth = require('../../utils/auth');
+const { User, Customer } = require('../../models');
+// "EG: localhost/api/users/login"
 router.post('/login', async (req, res) => {
     try {
       const userData = await User.findOne({ where: { email: req.body.email } });
@@ -32,6 +33,26 @@ router.post('/login', async (req, res) => {
       res.status(400).json(err);
     }
   });
+
+  // "EG: localhost/api/users/data"
+  router.get("/data", withAuth , async (req, res) => {
+    try {
+      const customerData = await Customer.findAll({
+        order: [["name", "ASC"]],
+      });
+  
+      const customers = customerData.map((project) =>
+        project.get({ plain: true })
+      );
+  
+      res.render("datapage", {
+        customers,
+        logged_in: req.session.logged_in,
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  })
 
   router.post('/logout', (req, res) => {
     if (req.session.logged_in) {
