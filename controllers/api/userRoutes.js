@@ -35,7 +35,7 @@ router.post('/login', async (req, res) => {
   });
 
   // "EG: localhost/api/users/data"
-  router.get("/data", withAuth , async (req, res) => {
+  router.get("/data", async (req, res) => {
     try {
       const customerData = await Customer.findAll({
         order: [["name", "ASC"]],
@@ -45,6 +45,7 @@ router.post('/login', async (req, res) => {
         project.get({ plain: true })
       );
   
+      // res.json(customers);
       res.render("datapage", {
         customers,
         logged_in: req.session.logged_in,

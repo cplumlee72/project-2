@@ -7,13 +7,13 @@ router.get("/", async (req, res) => {
     res.redirect("/api/users/data");
     return;
   }
-  res.render("datapage");
+  res.render("homepage");
 
 });
 
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect("/");
+    res.redirect("/api/users/data");
     return;
   }
 
