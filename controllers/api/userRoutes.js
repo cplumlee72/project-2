@@ -64,6 +64,26 @@ router.post('/login', async (req, res) => {
       res.status(404).end();
     }
   });
+
+  router.get("/data/:id", async (req, res) => {
+    try {
+      const customerData = await Customer.findAll({
+        where: {id: req.params.id},
+      });
+  
+      const customers = customerData.map((project) =>
+        project.get({ plain: true })
+      );
+  
+      // res.json(customers);
+      res.render("singleCust", {
+        customers,
+        logged_in: req.session.logged_in,
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  })
   
   module.exports = router;
   
