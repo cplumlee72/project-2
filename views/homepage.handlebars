@@ -1,36 +1,31 @@
-<body>
+<body class="vh-100">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark">
-          <span class="navbar-brand" href="#">Brand</span>
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-            <form class="form-inline">
-              <input class="form-control mr-sm-2" type="text" />
-              <button class="btn btn-primary my-2 my-sm-0" type="submit">
+        <nav class="navbar p-3 custom-nav-background">
+          <a class="navbar-brand">Brand</a>
+            <form class="form-inline flex-column text-center">
+              <input class="form-control mr-sm-2 col-2" type="text" />
+              <button class="btn btn-dark my-2 my-sm-0" type="submit">
                 Search
               </button>
             </form>
-
-            <a class="nav-link text-white" href="#" id="loginButton">Log in</a>
-
-          </div>
+            <a class="nav-link text-white" id="logoutButton">Log in</a>          
         </nav>
-        <div class="jumbotron">
-          <h2>
+      <div class="container-fluid d-flex justify-content-center mt-5">
+        <div class="card col-4 text-center">
+          <h2 class="card-title text-center">
             Hello, world!
           </h2>
-          <p>
+          <p class="card-body">
             This is a template for a simple marketing or informational website. It
             includes a large callout called the hero unit and three supporting
             pieces of content. Use it as a starting point to create something more
             unique.
           </p>
-          <p>
-            <a class="btn btn-primary btn-large" href="#">Learn more</a>
-          </p>
         </div>
+      </div>
+
       </div>
     </div>
   </div>
