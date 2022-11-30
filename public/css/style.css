@@ -8,3 +8,21 @@
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
     }
+
+
+.custom-nav-background {
+    background: rgb(91,99,189);
+    background: radial-gradient(circle, rgba(91,99,189,1) 0%, rgba(36,13,65,1) 100%);
+}
+
+.navbar-brand {
+    color: rgb(215, 222, 253);
+}
+
+.navbar-brand:hover {
+    color: #6a11cb;
+}
+
+body {
+    background-color: #5b5e64;
+}
