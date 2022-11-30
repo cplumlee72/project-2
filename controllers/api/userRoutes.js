@@ -84,6 +84,7 @@ router.get("/data/:id", async (req, res) => {
   }
 });
 
+// Update Customer
 router.put("/data/:id", async (req, res) => {
   try {
     const customerData = await Customer.update(
@@ -97,6 +98,25 @@ router.put("/data/:id", async (req, res) => {
     );
       
     res.status(200).json(req.body);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Create a new customer
+
+
+
+// Create a new User 
+
+// Delete a customer
+router.delete("/data/:id", async (req, res) => {
+  try {
+    const customerData = await Customer.destroy(
+      { where: { id: req.params.id } }
+    );
+      
+    res.status(200).json(res.body);
   } catch (err) {
     res.status(500).json(err);
   }
