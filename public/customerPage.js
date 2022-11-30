@@ -1,10 +1,6 @@
 let fields = document.querySelectorAll(".info");
 
 const delCustomer = (event) => {
-  const name = document.querySelector("#namefield").innerHTML;
-  const email = document.querySelector("#emailfield").innerHTML;
-  const address = document.querySelector("#addressfield").innerHTML;
-  const cost = document.querySelector("#costfield").innerHTML;
   const delButton = document.querySelector(".delButton");
   let custId = delButton.previousElementSibling.getAttribute("id")
 
@@ -12,10 +8,9 @@ const delCustomer = (event) => {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
-    },
-    
+    },    
   })
-    .then((res) => console.log(res.json()))
+    .then((res) => console.log(res))
     .then((data) => {
       console.log("Successful DELETE request:", data);
       return data;
@@ -23,23 +18,18 @@ const delCustomer = (event) => {
     .catch((error) => {
       console.error("Error in DELETE request:", error);
     });
-
 };
 
 const createDelButton = () => {
-
   let buttonCell = document.querySelector("#buttonCell");  
   const delButton = document.createElement("button");
   delButton.classList.add("delButton", "btn", "btn-sm", "btn-rounded");
   delButton.innerText = "delete";
   buttonCell.appendChild(delButton);
-
-  console.log(delButton);
-
   delButton.addEventListener("click", delCustomer);
 };
 
-
+// edit customer function to change customer value
 const editCustomer = (event) => {
   let editButtons = event.target;
   createDelButton();
@@ -47,19 +37,19 @@ const editCustomer = (event) => {
   editButtons.setAttribute("state", "save");
   editButtons.classList.remove("edit");
   editButtons.classList.add("save");
-
+  // make input fields editable
   fields.forEach((field) => {
     field.setAttribute("contenteditable", "true");
   });
 };
-
+// function to save updated customer information in the database.
 const saveCustomer = (event) => {
   const name = document.querySelector("#namefield").innerHTML;
   const email = document.querySelector("#emailfield").innerHTML;
   const address = document.querySelector("#addressfield").innerHTML;
   const cost = document.querySelector("#costfield").innerHTML;
   console.log(JSON.stringify({ name, email, address, cost }));
-
+  // put request to update information by ID
   fetch(`/api/users/data/${event.target.getAttribute("id")}`, {
     method: "PUT",
     headers: {
@@ -82,14 +72,13 @@ const saveCustomer = (event) => {
   saveButtons.setAttribute("state", "edit");
   saveButtons.classList.remove("save");
   saveButtons.classList.add("edit");
-
+    // set each input field to not editable once the save button is clicked 
   fields.forEach((field) => {
     field.setAttribute("contenteditable", "false");
   });
 };
 
 let functionButtons = document.querySelectorAll(".functionButton");
-console.log(functionButtons);
 functionButtons.forEach((button) => {
   button.addEventListener("click", (event) => {
     // console.log(event.target.getAttribute("state"));
