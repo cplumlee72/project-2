@@ -8,7 +8,6 @@ router.get("/", async (req, res) => {
     return;
   }
   res.render("homepage");
-
 });
 
 router.get("/login", (req, res) => {

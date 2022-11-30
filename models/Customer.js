@@ -1,9 +1,7 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
-class Customer extends Model {
-
-}
+class Customer extends Model {}
 
 Customer.init(
   {
@@ -26,9 +24,9 @@ Customer.init(
       },
     },
     address: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     cost: {
       type: DataTypes.DECIMAL,
       allowNull: true,
@@ -42,7 +40,7 @@ Customer.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'customer',
+    modelName: "customer",
   }
 );
 

@@ -20,6 +20,4 @@ const submitNewCust = async (event) => {
   }
 };
 
-document
-.addEventListener('submit', submitNewCust);
-
+document.addEventListener("submit", submitNewCust);
