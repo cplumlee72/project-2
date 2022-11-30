@@ -104,7 +104,22 @@ router.put("/data/:id", async (req, res) => {
 });
 
 // Create a new customer
-
+router.post("/data/newcustomer", async (req, res) => {
+  try {
+    const customerData = await Customer.create(
+      {
+        name: req.body.name,
+        email: req.body.email,
+        address: req.body.address,
+        cost: req.body.cost,
+      },
+    );
+    console.log(customerData);  
+    res.status(200).json(res.body);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 
 // Create a new User 
