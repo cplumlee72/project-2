@@ -28,3 +28,9 @@ body {
     background-color:whitesmoke;
     
 }
+
+/* added background for spacer */
+.spacer {
+    background-color: black
+}
+
