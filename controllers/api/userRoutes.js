@@ -120,6 +120,23 @@ router.post("/data/newcustomer", async (req, res) => {
 });
 
 // Create a new User
+router.post("/data/newuser", async (req, res) => {
+  if (req.body.username && req.body.email && req.body.password) {
+  try {
+    const userData = await User.create({
+      username: req.body.username,
+      email: req.body.email,
+      password: req.body.password,
+      
+    });
+    
+    console.log(userData);
+    res.status(200).json(res.body);
+  } catch (err) {
+    res.status(500).json(err);
+  } 
+}
+});
 
 // Delete a customer
 router.delete("/data/:id", async (req, res) => {
