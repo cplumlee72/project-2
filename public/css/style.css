@@ -10,7 +10,7 @@
   
   .navbar-brand {
     color: rgb(215, 222, 253);
-
+  }
   
 .navbar-brand:hover {
     color: #6a11cb;
@@ -31,16 +31,16 @@ body {
     background: rgb(91,99,189);
 }
   
-  #navBtn {
+  .navBtn {
     background-color: #220a49;
   }
   
-  #navBtn:hover {
+  .navBtn:hover {
     background-color: #150331;
     color: white;
   }
   
-  #navBtn:active {
+  .navBtn:active {
     background-color: #372553;
     border-color: rgb(88, 115, 236);
   }

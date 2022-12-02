@@ -44,6 +44,8 @@ const editCustomer = (event) => {
 };
 // function to save updated customer information in the database.
 const saveCustomer = (event) => {
+  let delButton = document.querySelector(".delButton");
+  delButton.remove();
   const name = document.querySelector("#namefield").innerHTML;
   const email = document.querySelector("#emailfield").innerHTML;
   const address = document.querySelector("#addressfield").innerHTML;
