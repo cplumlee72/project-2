@@ -10,12 +10,26 @@
   
   .navbar-brand {
     color: rgb(215, 222, 253);
-  }
+
   
-  .navbar-brand:hover {
-    color: rgb(215, 222, 253);
-  }
-  
+.navbar-brand:hover {
+    color: #6a11cb;
+}
+
+body {
+    
+    background-color:whitesmoke;
+    
+}
+
+/* added background for spacer */
+.spacer {
+    background-color: black
+}
+
+#footer {
+    background: rgb(91,99,189);
+}
   
   #navBtn {
     background-color: #220a49;
@@ -45,3 +59,4 @@
     background-color: rgb(134, 140, 206);
     border-color: rgba(144, 85, 211, 0.986);
   }
+
