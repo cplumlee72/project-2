@@ -44,5 +44,9 @@ You and your group will use everything you’ve learned over the past six module
 
 ![New Customer Screenshot 2022-12-07 at 8.51.01 PM.png](/public/images/New%20Customer%20Screenshot%202022-12-07%20at%208.51.01%20PM.png)
 
+GITHUB REPO
+https://github.com/cplumlee72/project-2
+
+DEPLOYED APPLICATION
 https://github.com/cplumlee72/project-2
 
