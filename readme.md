@@ -48,5 +48,4 @@ GITHUB REPO
 https://github.com/cplumlee72/project-2
 
 DEPLOYED APPLICATION
-https://github.com/cplumlee72/project-2
-
+https://cplumleecrm-project-2.herokuapp.com/
